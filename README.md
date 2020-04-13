@@ -24,6 +24,7 @@ ___
 |Name|Year|Department|
 |--|--|--|
 |[Kunal Tawatia](https://github.com/kunaltawatia)| Sophomore|Computer Science and Engineering|
+|[Harsh Agarwal](https://github.com/harsh-ux)|Fresher|Electrical Engineer|
 
 ##### Steps to join
 
