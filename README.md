@@ -38,7 +38,7 @@ ___
 |[Samarth Potdar](https://github.com/samarth-1729)|Freshman|Electrical Engineering|
 |[Pawandeep Suryavanshi](https://github.com/PawanSuryavanshi95)|Freshman|Electrical Engineering|
 |[Sanjukta Bhattacharya](https://github.com/bsanjukta235)|Freshman|Bio Engineering|
-
+|[Kodavali Vamsi Krishna](https://github.com/Kodavali841)|Freshman|Computer Science and Engineeting|
 ##### Steps to join
 
  1. Star this repo.
