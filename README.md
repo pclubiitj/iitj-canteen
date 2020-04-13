@@ -23,7 +23,7 @@ ___
 
 |Name|Year|Department|
 |--|--|--|
-|Kunal Tawatia| Sophomore|Computer Science and Engineering|
+|[Kunal Tawatia](https://github.com/kunaltawatia)| Sophomore|Computer Science and Engineering|
 
 ##### Steps to join
 
