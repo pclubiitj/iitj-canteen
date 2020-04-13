@@ -37,6 +37,7 @@ ___
 |[Aditi Goyal](https://github.com/gaditi123)|Freshman|Electrical Engineering|
 |[Samarth Potdar](https://github.com/samarth-1729)|Freshman|Electrical Engineering|
 |[Pawandeep Suryavanshi](https://github.com/PawanSuryavanshi95)|Freshman|Electrical Engineering|
+|[sanjukta Bhattacharya](https://github.com/bsanjukta235)|Freshman|Bio Engineering|
 
 ##### Steps to join
 
