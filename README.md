@@ -4,7 +4,7 @@
 > 
 > -bhaiya
 
-A web-application ( to be extended in mobile application ) which takes care of orders, payments, queues, and delivery, for any food vendor.
+A mobile-application which takes care of orders, payments, queues, and delivery, for any food vendor.
 ## Description
 We all are fed up. I don't think we need a description.
 ###### Things to learn
