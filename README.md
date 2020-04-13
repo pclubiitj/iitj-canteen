@@ -27,4 +27,5 @@ ___
 
 ##### Steps to join
 
- 1. Push a PR in this README, adding your details in the above table.
+ 1. Star this repo.
+ 2. Push a PR in this README, adding your details in the above table.
