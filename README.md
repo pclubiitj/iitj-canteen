@@ -29,12 +29,12 @@ ___
 |[Manav Kapoor](https://github.com/pratyaksh123)|Freshman|Electrical Engineering|
 |[Darshit Jain](https://github.com/DarshitJain04)|Freshman|Electrical Engineering|
 |[Shubham Agrawal](https://github.com/agrawalshubham01)|Freshman|Bio Engineering|
+|[Abhishek Raghav](https://github.com/imraghav20)|Freshman|Computer Science and Engineering|
 |[Harsh Agarwal](https://github.com/harsh-ux)|Freshman|Electrical Engineering|
 |[Harshil Bhatia](https://github.com/HarshilBhatia)|Freshman|Computer Science And Engineering| 
-|[Gautam Jain](https://github.com/gautamjain9615)|Freshman|Computer Science And Engineering| 
-|[Sandesh Singh](https://github.com/Sandesh1013)|Freshman|Mechanical Engineering| 
-
-
+|[Gautam Jain](https://github.com/gautamjain9615)|Freshman|Computer Science And Engineering|
+|[Sandesh Singh](https://github.com/Sandesh1013)|Freshman|Mechanical Engineering|
+|[Aditi Goyal](https://github.com/gaditi123)|Freshman|Electrical Engineering|
 
 ##### Steps to join
 
