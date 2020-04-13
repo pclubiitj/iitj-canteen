@@ -26,6 +26,18 @@ ___
 |[Kunal Tawatia](https://github.com/kunaltawatia)| Sophomore|Computer Science and Engineering|
 |[Pratyaksh Tyagi](https://github.com/pratyaksh123)|Freshman|Electrical Engineering|
 |[Tarun Tomar](https://github.com/TarunTomar122)|Freshman|Computer Science and Engineering|
+|[Manav Kapoor](https://github.com/pratyaksh123)|Freshman|Electrical Engineering|
+|[Darshit Jain](https://github.com/DarshitJain04)|Freshman|Electrical Engineering|
+|[Shubham Agrawal](https://github.com/agrawalshubham01)|Freshman|Bio Engineering|
+|[Abhishek Raghav](https://github.com/imraghav20)|Freshman|Computer Science and Engineering|
+|[Harsh Agarwal](https://github.com/harsh-ux)|Freshman|Electrical Engineering|
+|[Harshil Bhatia](https://github.com/HarshilBhatia)|Freshman|Computer Science And Engineering|
+|[Gautam Jain](https://github.com/gautamjain9615)|Freshman|Computer Science And Engineering|
+|[Sandesh Singh](https://github.com/Sandesh1013)|Freshman|Mechanical Engineering|
+|[Aditi Goyal](https://github.com/gaditi123)|Freshman|Electrical Engineering|
+|[Samarth Potdar](https://github.com/samarth-1729)|Freshman|Electrical Engineering|
+|[Pawandeep Suryavanshi](https://github.com/PawanSuryavanshi95)|Freshman|Electrical Engineering|
+|[Sanjukta Bhattacharya](https://github.com/bsanjukta235)|Freshman|Bio Engineering|
 
 ##### Steps to join
 
