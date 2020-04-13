@@ -29,7 +29,7 @@ ___
 |[Darshit Jain](https://github.com/DarshitJain04)|Freshman|Electrical Engineering|
 |[Shubham Agrawal](https://github.com/agrawalshubham01)|Freshman|Bio Engineering|
 |[Harsh Agarwal](https://github.com/harsh-ux)|Freshman|Electrical Engineering|
-
+|[Sandesh Singh](https://github.com/Sandesh1013)|Freshman|Mechanical Engineering|
 
 ##### Steps to join
 
