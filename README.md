@@ -36,6 +36,7 @@ ___
 |[Sandesh Singh](https://github.com/Sandesh1013)|Freshman|Mechanical Engineering|
 |[Aditi Goyal](https://github.com/gaditi123)|Freshman|Electrical Engineering|
 |[Samarth Potdar](https://github.com/samarth-1729)|Freshman|Electrical Engineering|
+|[Pawandeep Suryavanshi](https://github.com/PawanSuryavanshi95)|Freshman|Electrical Engineering|
 
 ##### Steps to join
 
