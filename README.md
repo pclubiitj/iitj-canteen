@@ -28,6 +28,7 @@ ___
 |[Tarun Tomar](https://github.com/TarunTomar122)|Freshman|Computer Science and Engineering|
 |[Darshit Jain](https://github.com/DarshitJain04)|Freshman|Electrical Engineering|
 |[Shubham Agrawal](https://github.com/agrawalshubham01)|Freshman|Bio Engineering|
+|[Aditi Goyal](https://github.com/gaditi123)|Freshman|Electrical Engineering|
 
 
 ##### Steps to join
