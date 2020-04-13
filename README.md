@@ -24,6 +24,8 @@ ___
 |Name|Year|Department|
 |--|--|--|
 |[Kunal Tawatia](https://github.com/kunaltawatia)| Sophomore|Computer Science and Engineering|
+|--|--|--|
+|[Pratyaksh Tyagi](https://github.com/pratyaksh123)|Freshman|Electrical Engineering|
 
 ##### Steps to join
 
