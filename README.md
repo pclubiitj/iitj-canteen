@@ -32,6 +32,8 @@ ___
 |[Harsh Agarwal](https://github.com/harsh-ux)|Freshman|Electrical Engineering|
 |[Harshil Bhatia](https://github.com/HarshilBhatia)|Freshman|Computer Science And Engineering| 
 |[Gautam Jain](https://github.com/gautamjain9615)|Freshman|Computer Science And Engineering| 
+|[Samarth Potdar](https://github.com/samarth-1729)|Freshman|Electrical Engineering|
+
 
 
 ##### Steps to join
