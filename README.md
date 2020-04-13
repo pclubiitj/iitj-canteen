@@ -1,6 +1,7 @@
 # Canteen
 
 > bournvita nahi hai bhaiya
+> 
 > -bhaiya
 
 A web-application ( to be extended in mobile application ) which takes care of orders, payments, queues, and delivery, for any food vendor.
@@ -23,3 +24,7 @@ ___
 |Name|Year|Department|
 |--|--|--|
 |Kunal Tawatia| Sophomore|Computer Science and Engineering|
+
+##### Steps to join
+
+ 1. Push a PR in this README, adding your details in the above table.
