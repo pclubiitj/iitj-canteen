@@ -31,6 +31,7 @@ ___
 |[Shubham Agrawal](https://github.com/agrawalshubham01)|Freshman|Bio Engineering|
 |[Harsh Agarwal](https://github.com/harsh-ux)|Freshman|Electrical Engineering|
 |[Harshil Bhatia](https://github.com/HarshilBhatia)|Freshman|Computer Science And Engineering| 
+|[Gautam Jain](https://github.com/gautamjain9615)|Freshman|Computer Science And Engineering| 
 
 
 ##### Steps to join
