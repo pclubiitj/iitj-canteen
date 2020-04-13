@@ -24,6 +24,8 @@ ___
 |Name|Year|Department|
 |--|--|--|
 |[Kunal Tawatia](https://github.com/kunaltawatia)| Sophomore|Computer Science and Engineering|
+|--|--|--|
+|[Darshit Jain](https://github.com/DarshitJain04)| Freshman|Electrical Engineering|
 
 ##### Steps to join
 
