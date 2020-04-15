@@ -10,13 +10,13 @@ export const fetchUserSuccess = (state, { token }) => ({
 
 export const fetchUserFailure = (state, { errorMessage }) => ({
   ...state,
-  token: '',
+  token: null,
   userErrorMessage: errorMessage,
 })
 
-export const signoutUser = (state) =>({
+export const signoutUser = (state) => ({
   ...state,
-  token:'',
+  token: null,
 })
 
 export const reducer = createReducer(INITIAL_STATE, {

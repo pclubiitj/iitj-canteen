@@ -1,18 +1,23 @@
 import React from 'react'
-import { Text, View,Button } from 'react-native'
+import { Text, View } from 'react-native'
 import styles from './SplashScreenStyle'
 import { connect } from 'react-redux'
-import ExampleActions from 'App/Stores/Authentication/Actions'
+import AuthActionTypes from 'App/Stores/Authentication/Actions'
 import { PropTypes } from 'prop-types'
 
 class SplashScreen extends React.Component {
+  componentDidMount() {
+    this._fetchuser()
+  }
   render() {
-    this.props.fetchUser()
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Loading....</Text>
       </View>
     )
+  }
+  _fetchuser() {
+    this.props.fetchUser()
   }
 }
 
@@ -24,7 +29,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUser: () => dispatch(ExampleActions.fetchUser()),
+  fetchUser: () => dispatch(AuthActionTypes.fetchUser()),
 })
 
 export default connect(

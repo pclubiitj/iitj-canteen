@@ -8,7 +8,7 @@ const { Types, Creators } = createActions({
   // User informations were successfully fetched
   fetchUserSuccess: ['token'],
   // Sign User Out and Remove The Token
-  signoutUser:null,
+  signoutUser: null,
   // An error occurred
   fetchUserFailure: ['errorMessage'],
 })

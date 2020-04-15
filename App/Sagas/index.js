@@ -1,6 +1,6 @@
 import { takeLatest, all } from 'redux-saga/effects'
 import { AuthActionTypes } from 'App/Stores/Authentication/Actions'
-import { fetchUser,signinUser, signoutUser } from './AuthSaga'
+import { fetchUser, signinUser, signoutUser } from './AuthSaga'
 
 export default function* root() {
   yield all([
