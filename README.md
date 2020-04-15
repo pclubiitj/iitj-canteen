@@ -4,7 +4,7 @@
 > 
 > -bhaiya
 
-A web-application ( to be extended in mobile application ) which takes care of orders, payments, queues, and delivery, for any food vendor.
+A mobile-application which takes care of orders, payments, queues, and delivery, for any food vendor.
 ## Description
 We all are fed up. I don't think we need a description.
 ###### Things to learn
@@ -19,6 +19,39 @@ ___
 - MERN `MongoDB, ExpressJS, NodeJS, ReactJS`
 > ReactJS is chosen so we can then use its components for further developing a cross-platform mobile application in react native.
 
+## Steps to setup locally and run:
+If you run into any errors , refer to the Environment setup on the official React Native Docs - [Environment-Setup](https://reactnative.dev/docs/environment-setup)
+
+* ### Install [Node.js](https://nodejs.org/en/download/current/)
+> Deploying this app requires node package manager `npm` 
+
+* ### Clone the repository
+> Download this repository `or`
+```
+git clone https://github.com/pclubiitj/iitj-canteen.git
+cd iitj-canteen
+```
+* ### Install [yarn](https://yarnpkg.com/en/docs/install)
+> Yarn is a dependency manager built by facebook and google. It is a more efficient and reliable (thanks to yarn.lock) alternative of npm.
+- Launch ``` yarn ``` command in a terminal opened in the project folder.
+> This command will look into the *package.json* file and install all the dependencies listed here.
+- Install react-native-cli globally on your computer
+```
+yarn global add react-native-cli
+```
+* ### Android steps
+Launch a virtual android device, for instance, by using [Android Studio](https://developer.android.com/studio/run/managing-avds.html#viewing)
+
+> If you have never installed any android virtual device, [follow those instructions](https://developer.android.com/studio/run/managing-avds.html#createavd)
+
+* ### Start the project with
+```
+react-native start
+```
+* ### Run `debug build`
+```
+react-native run-android
+```
 ## Team
 
 |Name|Year|Department|
@@ -39,6 +72,9 @@ ___
 |[Pawandeep Suryavanshi](https://github.com/PawanSuryavanshi95)|Freshman|Electrical Engineering|
 |[Sanjukta Bhattacharya](https://github.com/bsanjukta235)|Freshman|Bio Engineering|
 |[Kodavali Vamsi Krishna](https://github.com/Kodavali841)|Freshman|Computer Science and Engineeting|
+|[Akshika Gupta](https://github.com/guptaakshika09)|Freshman|Computer Science And Engineering|
+|[Anshul Goyal](https://github.com/Anshulpg)|Freshman|Computer Science And Engineering|
+
 ##### Steps to join
 
  1. Star this repo.
