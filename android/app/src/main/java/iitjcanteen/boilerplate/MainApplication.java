@@ -1,4 +1,4 @@
-package com.boilerplate;
+package iitjcanteen.boilerplate;
 
 import android.app.Application;
 import android.content.Context;
