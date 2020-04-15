@@ -39,9 +39,8 @@ cd iitj-canteen
 ```
 yarn global add react-native-cli
 ```
-#### Android steps
-
-- Launch a virtual android device, for instance, by using [Android Studio](https://developer.android.com/studio/run/managing-avds.html#viewing)
+* ### Android steps
+Launch a virtual android device, for instance, by using [Android Studio](https://developer.android.com/studio/run/managing-avds.html#viewing)
 
 > If you have never installed any android virtual device, [follow those instructions](https://developer.android.com/studio/run/managing-avds.html#createavd)
 
