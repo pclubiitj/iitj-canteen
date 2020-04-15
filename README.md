@@ -69,6 +69,7 @@ react-native run-android
 |[Sandesh Singh](https://github.com/Sandesh1013)|Freshman|Mechanical Engineering|
 |[Aditi Goyal](https://github.com/gaditi123)|Freshman|Electrical Engineering|
 |[Samarth Potdar](https://github.com/samarth-1729)|Freshman|Electrical Engineering|
+|[Hard Savani](https://github.com/HardSavani)|Freshman|Computer Science And Engineering|
 |[Pawandeep Suryavanshi](https://github.com/PawanSuryavanshi95)|Freshman|Electrical Engineering|
 |[Sanjukta Bhattacharya](https://github.com/bsanjukta235)|Freshman|Bio Engineering|
 |[Kodavali Vamsi Krishna](https://github.com/Kodavali841)|Freshman|Computer Science and Engineeting|
