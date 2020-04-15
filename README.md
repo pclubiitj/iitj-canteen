@@ -19,14 +19,19 @@ ___
 - MERN `MongoDB, ExpressJS, NodeJS, ReactJS`
 > ReactJS is chosen so we can then use its components for further developing a cross-platform mobile application in react native.
 
-### Running the Project 
+## Steps to setup locally and run:
 If you run into any errors , refer to the Environment setup on the official React Native Docs - [Environment-Setup](https://reactnative.dev/docs/environment-setup)
-- Clone this Project
+
+* ### Install [Node.js](https://nodejs.org/en/download/current/)
+> Deploying this app requires node package manager `npm` 
+
+* ### Clone the repository
+> Download this repository `or`
 ```
-git clone < https://github.com/pclubiitj/iitj-canteen >
+git clone https://github.com/pclubiitj/iitj-canteen.git
+cd iitj-canteen
 ```
-- [Install NodeJS](https://nodejs.org/en/)
-- [Install yarn](https://yarnpkg.com/en/docs/install)
+* ### Install [yarn](https://yarnpkg.com/en/docs/install)
 > Yarn is a dependency manager built by facebook and google. It is a more efficient and reliable (thanks to yarn.lock) alternative of npm.
 - Launch ``` yarn ``` command in a terminal opened in the project folder.
 > This command will look into the *package.json* file and install all the dependencies listed here.
@@ -36,21 +41,18 @@ yarn global add react-native-cli
 ```
 #### Android steps
 
-- Launch a virtual android device [(through *Android Studio* for instance)](https://developer.android.com/studio/run/managing-avds.html#viewing)
+- Launch a virtual android device, for instance, by using [Android Studio](https://developer.android.com/studio/run/managing-avds.html#viewing)
 
 > If you have never installed any android virtual device, [follow those instructions](https://developer.android.com/studio/run/managing-avds.html#createavd)
 
-- Then, run the project in executing on your project folder:
-
-```
-react-native run-android
-```
-- After the app is installed on your device, run it by -
-
+* ### Start the project with
 ```
 react-native start
 ```
-
+* ### Run `debug build`
+```
+react-native run-android
+```
 ## Team
 
 |Name|Year|Department|
