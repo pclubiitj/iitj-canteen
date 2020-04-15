@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "158661755426",
+    "firebase_url": "https://iit-j-canteenapp.firebaseio.com",
+    "project_id": "iit-j-canteenapp",
+    "storage_bucket": "iit-j-canteenapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158661755426:android:b3f2ed3036f71ffee4807b",
+        "android_client_info": {
+          "package_name": "iitjcanteen.boilerplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158661755426-qnvuauvn1mj0ne1vijnn3q3tvl67t67g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "iitjcanteen.boilerplate",
+            "certificate_hash": "374facfd97f24599f8bdc0613aa9559abb6c83a2"
+          }
+        },
+        {
+          "client_id": "158661755426-m66lsdd1db72uuqm32a2fnt3f2lneknu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo-MGxnmzkK48a2zH1cKjSb7e0qK1ksN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158661755426-m66lsdd1db72uuqm32a2fnt3f2lneknu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
