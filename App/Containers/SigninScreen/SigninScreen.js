@@ -10,7 +10,10 @@ class SigninScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>SigninScreen</Text>
-        <Button title="Sign in" onPress={() => this.props.signin({ username: "username", password: "password" })} />
+        <Button
+          title="Sign in"
+          onPress={() => this.props.signin({ username: 'username', password: 'password' })}
+        />
       </View>
     )
   }
@@ -20,14 +23,10 @@ SigninScreen.propTypes = {
   signin: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
-  signin: (username, password) => dispatch(AuthActionTypes.signinUser(username, password)),
+  signin: (username, password) => dispatch(AuthActionTypes.signinUser(username, password))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SigninScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(SigninScreen)

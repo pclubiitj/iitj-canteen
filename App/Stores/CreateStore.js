@@ -1,18 +1,17 @@
+import { AsyncStorage } from 'react-native'
 import { applyMiddleware, compose, createStore } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { persistReducer, persistStore } from 'redux-persist'
 
-import storage from 'redux-persist/lib/storage'
-
 const persistConfig = {
   key: 'root',
-  storage: storage,
+  storage: AsyncStorage,
   /**
    * Blacklist state that we do not need/want to persist
    */
   blacklist: [
     // 'auth',
-  ],
+  ]
 }
 
 export default (rootReducer, rootSaga) => {

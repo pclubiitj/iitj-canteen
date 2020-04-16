@@ -1,13 +1,12 @@
 import { StyleSheet } from 'react-native'
 
-
 export default StyleSheet.create({
   text: {
     fontSize: 48
   },
   view: {
-    flex: 1,
     alignItems: 'center',
+    flex: 1,
     justifyContent: 'center'
   }
 })

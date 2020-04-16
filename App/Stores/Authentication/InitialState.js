@@ -3,5 +3,5 @@
  */
 export const INITIAL_STATE = {
   token: null,
-  userErrorMessage: null,
+  userErrorMessage: null
 }

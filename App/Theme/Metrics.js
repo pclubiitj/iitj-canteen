@@ -10,61 +10,61 @@ export const medium = normal * 2 // 30
 
 export default {
   bottomMargin: {
-    marginBottom: normal,
+    marginBottom: normal
   },
   mediumBottomMargin: {
-    marginBottom: medium,
+    marginBottom: medium
   },
 
   tinyVerticalMargin: {
-    marginVertical: tiny,
+    marginVertical: tiny
   },
   smallVerticalMargin: {
-    marginVertical: small,
+    marginVertical: small
   },
   verticalMargin: {
-    marginVertical: normal,
+    marginVertical: normal
   },
   mediumVerticalMargin: {
-    marginVertical: medium,
+    marginVertical: medium
   },
 
   tinyHorizontalMargin: {
-    marginHorizontal: tiny,
+    marginHorizontal: tiny
   },
   smallHorizontalMargin: {
-    marginHorizontal: small,
+    marginHorizontal: small
   },
   horizontalMargin: {
-    marginHorizontal: normal,
+    marginHorizontal: normal
   },
   mediumHorizontalMargin: {
-    marginHorizontal: medium,
+    marginHorizontal: medium
   },
 
   tinyHorizontalPadding: {
-    paddingHorizontal: tiny,
+    paddingHorizontal: tiny
   },
   smallHorizontalPadding: {
-    paddingHorizontal: small,
+    paddingHorizontal: small
   },
   horizontalPadding: {
-    paddingHorizontal: normal,
+    paddingHorizontal: normal
   },
   mediumHorizontalPadding: {
-    paddingHorizontal: medium,
+    paddingHorizontal: medium
   },
 
   tinyVerticalPadding: {
-    paddingVertical: tiny,
+    paddingVertical: tiny
   },
   smallVerticalPadding: {
-    paddingVertical: small,
+    paddingVertical: small
   },
   verticalPadding: {
-    paddingVertical: normal,
+    paddingVertical: normal
   },
   mediumVerticalPadding: {
-    paddingVertical: medium,
-  },
+    paddingVertical: medium
+  }
 }
