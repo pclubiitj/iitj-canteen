@@ -53,6 +53,7 @@
     "express-jwt": "5.3.3",
     "express-validation": "3.0.2",
     "express-winston": "4.0.3",
+    "google-auth-library": "^6.0.0",
     "helmet": "3.22.0",
     "http-status": "1.4.2",
     "joi": "14.3.1",

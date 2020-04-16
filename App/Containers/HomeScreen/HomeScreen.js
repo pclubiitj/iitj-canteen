@@ -15,7 +15,7 @@ class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ userInfo: this._getUserInfo() })
+    this._getUserInfo()
   }
 
   render() {
@@ -26,10 +26,11 @@ class HomeScreen extends React.Component {
       </View>
     )
   }
-  _getUserInfo = async () => {
+
+  async _getUserInfo() {
     try {
-      const userInfo = AuthenticationServices.trySilentSignin()
-      return userInfo
+      const userInfo = await AuthenticationServices.trySilentSignin()
+      this.setState({ userInfo })
     } catch (err) {
       console.log(err)
     }

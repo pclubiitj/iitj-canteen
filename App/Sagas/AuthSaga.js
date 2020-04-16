@@ -14,8 +14,8 @@ export function* fetchUser() {
       // If token not found let's try silent Signin
       const userInfo = yield call(AuthenticationServices.trySilentSignin)
       if (userInfo) {
-        yield call(AsyncStorage, 'token', userInfo.idToken) //Save Token in async storage
-        yield put(AuthActionTypes.fetchUserSuccess(userInfo.idToken)) //set redux state token to token
+        yield call(AsyncStorage, 'token', userInfo.idToken) // Save Token in async storage
+        yield put(AuthActionTypes.fetchUserSuccess(userInfo.idToken)) // set redux state token to token
         NavigationService.navigate('HomeScreen')
       } else {
         // Both of these failed so prompt user to signinScreen

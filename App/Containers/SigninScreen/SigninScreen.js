@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import AuthActionTypes from 'App/Stores/Authentication/Actions'
 import styles from './SigninScreenStyle'
 import { PropTypes } from 'prop-types'
-import { GoogleSigninButton } from 'react-native-google-signin'
+import { GoogleSigninButton } from '@react-native-community/google-signin'
 
 class SigninScreen extends React.Component {
   render() {
