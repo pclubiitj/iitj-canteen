@@ -25,11 +25,10 @@ SplashScreen.propTypes = {
   fetchUser: PropTypes.func
 }
 
-const mapStateToProps = (state) => ({
-})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUser: () => dispatch(AuthActionTypes.fetchUser()),
+  fetchUser: () => dispatch(AuthActionTypes.fetchUser())
 })
 
 export default connect(

@@ -11,7 +11,7 @@ class HomeScreen extends React.Component {
       <View style={styles.view}>
         <Text style={styles.text}>HomeScreen</Text>
         <Text>Here is the Dummy Token - {this.props.token}</Text>
-        <Button title='Sign Out' onPress={this.props.signout} />
+        <Button title="Sign Out" onPress={this.props.signout} />
       </View>
     )
   }
@@ -27,7 +27,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  signout: () => dispatch(AuthActionTypes.signoutUser()),
+  signout: () => dispatch(AuthActionTypes.signoutUser())
 })
 
 export default connect(

@@ -7,14 +7,14 @@ import GoogleSignIns from 'App/Containers/GoogleSignIn/GoogleSignIn'
 
 const StackNavigator = createStackNavigator(
   {
-    GoogleSignIn:GoogleSignIns,
+    GoogleSignIn: GoogleSignIns,
     MainScreen: SplashScreen,
     SigninScreen: SigninScreen,
     HomeScreen: HomeScreen
   },
   {
     initialRouteName: 'GoogleSignIn',
-    headerMode: 'none',
+    headerMode: 'none'
   }
 )
 

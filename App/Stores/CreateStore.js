@@ -12,7 +12,7 @@ const persistConfig = {
    */
   blacklist: [
     // 'auth',
-  ],
+  ]
 }
 
 export default (rootReducer, rootSaga) => {

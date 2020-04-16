@@ -5,18 +5,18 @@ import { AuthActionTypes } from './Actions'
 export const fetchUserSuccess = (state, { token }) => ({
   ...state,
   token: token,
-  userErrorMessage: null,
+  userErrorMessage: null
 })
 
 export const fetchUserFailure = (state, { errorMessage }) => ({
   ...state,
   token: null,
-  userErrorMessage: errorMessage,
+  userErrorMessage: errorMessage
 })
 
 export const signoutUser = (state) => ({
   ...state,
-  token: null,
+  token: null
 })
 
 export const reducer = createReducer(INITIAL_STATE, {
