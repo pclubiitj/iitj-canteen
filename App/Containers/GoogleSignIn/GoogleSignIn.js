@@ -19,7 +19,7 @@ export default class GoogleSignins extends React.Component {
           style={{ width: 192, height: 48 }}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
-          onPress={this._signIn}
+          onPress={this._signIn.bind(this)}
         />
         <View>
           <Text>{this.state.name}</Text>
@@ -41,7 +41,7 @@ export default class GoogleSignins extends React.Component {
       // iosClientId: '<FROM DEVELOPER CONSOLE>', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
     })
   }
-  _signIn = async () => {
+  async _signIn() {
     try {
       await GoogleSignin.hasPlayServices()
       const userInfo = await GoogleSignin.signIn()
