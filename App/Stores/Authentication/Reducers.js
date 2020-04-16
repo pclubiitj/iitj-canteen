@@ -22,5 +22,5 @@ export const signoutUser = (state) => ({
 export const reducer = createReducer(INITIAL_STATE, {
   [AuthActionTypes.FETCH_USER_SUCCESS]: fetchUserSuccess,
   [AuthActionTypes.FETCH_USER_FAILURE]: fetchUserFailure,
-  [AuthActionTypes.SIGNOUT_USER]: signoutUser
+  [AuthActionTypes.SIGNOUT_USER]: signoutUser,
 })

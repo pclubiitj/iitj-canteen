@@ -4,7 +4,7 @@ const { Types, Creators } = createActions({
   // Fetch user informations from asyncStorage
   fetchUser: null,
   // Sign user in and send data to API to get back token
-  signinUser: ["data"],
+  signinUser: null,
   // User informations were successfully fetched
   fetchUserSuccess: ['token'],
   // Sign User Out and Remove The Token

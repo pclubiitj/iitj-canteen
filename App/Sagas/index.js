@@ -6,6 +6,6 @@ export default function* root() {
   yield all([
     takeLatest(AuthActionTypes.FETCH_USER, fetchUser),
     takeLatest(AuthActionTypes.SIGNIN_USER, signinUser),
-    takeLatest(AuthActionTypes.SIGNOUT_USER, signoutUser)
+    takeLatest(AuthActionTypes.SIGNOUT_USER, signoutUser),
   ])
 }

@@ -22,11 +22,10 @@ class SplashScreen extends React.Component {
 }
 
 SplashScreen.propTypes = {
-  fetchUser: PropTypes.func
+  fetchUser: PropTypes.func,
 }
 
-const mapStateToProps = (state) => ({
-})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: () => dispatch(AuthActionTypes.fetchUser()),

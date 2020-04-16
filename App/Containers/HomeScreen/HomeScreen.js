@@ -4,26 +4,45 @@ import { connect } from 'react-redux'
 import AuthActionTypes from 'App/Stores/Authentication/Actions'
 import styles from './HomeScreenStyle.js'
 import { PropTypes } from 'prop-types'
+import AuthenticationServices from 'App/Services/AuthenticationServices'
 
 class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      userInfo: null,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ userInfo: this._getUserInfo() })
+  }
+
   render() {
     return (
       <View style={styles.view}>
         <Text style={styles.text}>HomeScreen</Text>
-        <Text>Here is the Dummy Token - {this.props.token}</Text>
-        <Button title='Sign Out' onPress={this.props.signout} />
+        <Button title="Sign Out" onPress={this.props.signout} />
       </View>
     )
+  }
+  _getUserInfo = async () => {
+    try {
+      const userInfo = AuthenticationServices.trySilentSignin()
+      return userInfo
+    } catch (err) {
+      console.log(err)
+    }
   }
 }
 
 HomeScreen.propTypes = {
   token: PropTypes.string,
-  signin: PropTypes.func
+  signin: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
-  token: state.authentication.token
+  token: state.authentication.token,
 })
 
 const mapDispatchToProps = (dispatch) => ({
