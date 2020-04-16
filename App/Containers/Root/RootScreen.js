@@ -37,7 +37,4 @@ const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({})
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RootScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(RootScreen)

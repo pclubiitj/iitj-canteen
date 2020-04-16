@@ -10,7 +10,7 @@ const { Types, Creators } = createActions({
   // Sign User Out and Remove The Token
   signoutUser: null,
   // An error occurred
-  fetchUserFailure: ['errorMessage'],
+  fetchUserFailure: ['errorMessage']
 })
 
 export const AuthActionTypes = Types

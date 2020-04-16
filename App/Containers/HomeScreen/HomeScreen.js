@@ -39,6 +39,7 @@ class HomeScreen extends React.Component {
 HomeScreen.propTypes = {
   token: PropTypes.string,
   signin: PropTypes.func,
+  signout: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
@@ -46,10 +47,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  signout: () => dispatch(AuthActionTypes.signoutUser()),
+  signout: () => dispatch(AuthActionTypes.signoutUser())
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

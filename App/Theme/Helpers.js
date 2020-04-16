@@ -3,170 +3,170 @@ import { Colors } from 'App/Theme'
 
 export default StyleSheet.create({
   backgroundReset: {
-    backgroundColor: Colors.transparent,
+    backgroundColor: Colors.transparent
   },
   center: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   colCenter: {
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   colCross: {
     alignItems: 'center',
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   colMain: {
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   column: {
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   columnReverse: {
-    flexDirection: 'column-reverse',
+    flexDirection: 'column-reverse'
   },
   crossCenter: {
-    alignItems: 'center',
+    alignItems: 'center'
   },
   crossEnd: {
-    alignItems: 'flex-end',
+    alignItems: 'flex-end'
   },
   crossStart: {
-    alignItems: 'flex-start',
+    alignItems: 'flex-start'
   },
   crossStretch: {
-    alignItems: 'stretch',
+    alignItems: 'stretch'
   },
   fill: {
-    flex: 1,
+    flex: 1
   },
   fillCenter: {
     alignItems: 'center',
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   fillCol: {
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   fillColCenter: {
     alignItems: 'center',
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   fillColCross: {
     alignItems: 'center',
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
   fillColMain: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   fillColReverse: {
     flex: 1,
-    flexDirection: 'column-reverse',
+    flexDirection: 'column-reverse'
   },
   fillRow: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   fillRowCenter: {
     alignItems: 'center',
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   fillRowCross: {
     alignItems: 'center',
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   fillRowMain: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   fillRowReverse: {
     flex: 1,
-    flexDirection: 'row-reverse',
+    flexDirection: 'row-reverse'
   },
   fullSize: {
     height: '100%',
-    width: '100%',
+    width: '100%'
   },
   fullWidth: {
-    width: '100%',
+    width: '100%'
   },
   mainCenter: {
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   mainEnd: {
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
   mainSpaceAround: {
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   mainSpaceBetween: {
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   mainStart: {
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
   mirror: {
-    transform: [{ scaleX: -1 }],
+    transform: [{ scaleX: -1 }]
   },
   rotate90: {
-    transform: [{ rotate: '90deg' }],
+    transform: [{ rotate: '90deg' }]
   },
   rotate90Inverse: {
-    transform: [{ rotate: '-90deg' }],
+    transform: [{ rotate: '-90deg' }]
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   rowCenter: {
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   rowCross: {
     alignItems: 'center',
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   rowMain: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   rowReverse: {
-    flexDirection: 'row-reverse',
+    flexDirection: 'row-reverse'
   },
   scrollSpaceAround: {
     flexGrow: 1,
-    justifyContent: 'space-around',
+    justifyContent: 'space-around'
   },
   scrollSpaceBetween: {
     flexGrow: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   selfStretch: {
-    alignSelf: 'stretch',
+    alignSelf: 'stretch'
   },
   textCenter: {
-    textAlign: 'center',
+    textAlign: 'center'
   },
   textJustify: {
-    textAlign: 'justify',
+    textAlign: 'justify'
   },
   textLeft: {
-    textAlign: 'left',
+    textAlign: 'left'
   },
   textRight: {
-    textAlign: 'right',
-  },
+    textAlign: 'right'
+  }
 })

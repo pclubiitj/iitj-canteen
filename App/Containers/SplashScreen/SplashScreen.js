@@ -9,6 +9,7 @@ class SplashScreen extends React.Component {
   componentDidMount() {
     this._fetchuser()
   }
+
   render() {
     return (
       <View style={styles.container}>
@@ -16,6 +17,7 @@ class SplashScreen extends React.Component {
       </View>
     )
   }
+
   _fetchuser() {
     this.props.fetchUser()
   }
@@ -28,10 +30,7 @@ SplashScreen.propTypes = {
 const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUser: () => dispatch(AuthActionTypes.fetchUser()),
+  fetchUser: () => dispatch(AuthActionTypes.fetchUser())
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SplashScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(SplashScreen)

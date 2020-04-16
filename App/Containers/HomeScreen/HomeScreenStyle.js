@@ -5,9 +5,8 @@ export default StyleSheet.create({
     fontSize: 48,
   },
   view: {
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 30,
-  },
+    flex: 1,
+    justifyContent: 'center'
+  }
 })
