@@ -17,6 +17,7 @@
     "react-native/react-native": true
   },
   "extends": [
+    "standard",
     "plugin:react/recommended",
     "plugin:react-native/all",
     "plugin:prettier/recommended"

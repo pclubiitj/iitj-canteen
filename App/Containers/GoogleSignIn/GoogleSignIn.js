@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text, StyleSheet, View, Image } from 'react-native'
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin'
+import { Text, View, Image } from 'react-native'
+import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin'
 
 export default class GoogleSignins extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ export default class GoogleSignins extends React.Component {
       </>
     )
   }
+
   componentDidMount() {
     GoogleSignin.configure({
       scopes: ['https://www.googleapis.com/auth/userinfo.profile'], // what API you want to access on behalf of the user, default is email and profile
@@ -41,6 +42,7 @@ export default class GoogleSignins extends React.Component {
       // iosClientId: '<FROM DEVELOPER CONSOLE>', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
     })
   }
+
   async _signIn() {
     try {
       await GoogleSignin.hasPlayServices()

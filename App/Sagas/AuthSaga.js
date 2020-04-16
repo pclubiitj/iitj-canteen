@@ -19,7 +19,8 @@ export function* fetchUser() {
 
 export function* signinUser({ data }) {
   try {
-    ;(username = data.username), (password = data.password)
+    const { username, password } = data
+    const api = null // ToDo
     const response = yield call(api, username, password)
     yield call(AsyncStorage.setItem, 'token', response.token)
     yield put(AuthActionTypes.fetchUserSuccess(response.token))

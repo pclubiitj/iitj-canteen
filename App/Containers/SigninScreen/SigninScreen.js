@@ -29,7 +29,4 @@ const mapDispatchToProps = (dispatch) => ({
   signin: (username, password) => dispatch(AuthActionTypes.signinUser(username, password))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SigninScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(SigninScreen)
