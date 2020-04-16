@@ -23,7 +23,7 @@ class SigninScreen extends React.Component {
 }
 
 SigninScreen.propTypes = {
-  signin: PropTypes.func,
+  signin: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({})

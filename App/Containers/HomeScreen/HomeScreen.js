@@ -10,7 +10,7 @@ class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      userInfo: null,
+      userInfo: null
     }
   }
 
@@ -42,7 +42,7 @@ HomeScreen.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  token: state.authentication.token,
+  token: state.authentication.token
 })
 
 const mapDispatchToProps = (dispatch) => ({

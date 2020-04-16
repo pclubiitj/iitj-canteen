@@ -20,10 +20,8 @@ module.exports = {
         .required()
     },
     params: {
-      userId: Joi.string()
-        .hex()
-        .required(),
-    },
+      userId: Joi.string().hex().required()
+    }
   },
 
   // POST /api/auth/login

@@ -7,6 +7,6 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   text: {
-    fontSize: 48,
-  },
+    fontSize: 48
+  }
 })

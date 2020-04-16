@@ -33,5 +33,5 @@ async function signout() {
 export default {
   trySilentSignin,
   signin,
-  signout,
+  signout
 }

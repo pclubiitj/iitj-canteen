@@ -8,11 +8,11 @@ const StackNavigator = createStackNavigator(
   {
     MainScreen: SplashScreen,
     SigninScreen: SigninScreen,
-    HomeScreen: HomeScreen,
+    HomeScreen: HomeScreen
   },
   {
     initialRouteName: 'MainScreen',
-    headerMode: 'none',
+    headerMode: 'none'
   }
 )
 

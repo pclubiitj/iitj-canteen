@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   text: {
-    fontSize: 48,
+    fontSize: 48
   },
   view: {
     alignItems: 'center',
