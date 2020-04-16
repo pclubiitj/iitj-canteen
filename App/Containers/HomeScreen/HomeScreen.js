@@ -38,7 +38,6 @@ class HomeScreen extends React.Component {
 
 HomeScreen.propTypes = {
   token: PropTypes.string,
-  signin: PropTypes.func,
   signout: PropTypes.func
 }
 

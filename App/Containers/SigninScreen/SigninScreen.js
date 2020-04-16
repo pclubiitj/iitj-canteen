@@ -29,7 +29,7 @@ SigninScreen.propTypes = {
 const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
-  signin: (username, password) => dispatch(AuthActionTypes.signinUser(username, password))
+  signin: () => dispatch(AuthActionTypes.signinUser())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SigninScreen)
