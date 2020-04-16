@@ -1,4 +1,4 @@
-const Joi = require('joi')
+const { Joi } = require('express-validation')
 
 module.exports = {
   // POST /api/users
@@ -7,8 +7,8 @@ module.exports = {
       username: Joi.string().required(),
       mobileNumber: Joi.string()
         .regex(/^[1-9][0-9]{9}$/)
-        .required(),
-    },
+        .required()
+    }
   },
 
   // UPDATE /api/users/:userId
@@ -17,7 +17,7 @@ module.exports = {
       username: Joi.string().required(),
       mobileNumber: Joi.string()
         .regex(/^[1-9][0-9]{9}$/)
-        .required(),
+        .required()
     },
     params: {
       userId: Joi.string()
@@ -30,7 +30,7 @@ module.exports = {
   login: {
     body: {
       username: Joi.string().required(),
-      password: Joi.string().required(),
-    },
-  },
+      password: Joi.string().required()
+    }
+  }
 }

@@ -11,12 +11,12 @@ chai.config.includeStack = true
 describe('## Auth APIs', () => {
   const validUserCredentials = {
     username: 'react',
-    password: 'express',
+    password: 'express'
   }
 
   const invalidUserCredentials = {
     username: 'react',
-    password: 'IDontKnow',
+    password: 'IDontKnow'
   }
 
   let jwtToken

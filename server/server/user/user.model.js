@@ -18,8 +18,8 @@ const UserSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now,
-  },
+    default: Date.now
+  }
 })
 
 /**
@@ -67,7 +67,7 @@ UserSchema.statics = {
       .skip(+skip)
       .limit(+limit)
       .exec()
-  },
+  }
 }
 
 /**

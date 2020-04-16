@@ -6,7 +6,7 @@ const config = require('../../config/config')
 // sample user, used for authentication
 const user = {
   username: 'react',
-  password: 'express',
+  password: 'express'
 }
 
 /**
@@ -22,13 +22,13 @@ function login(req, res, next) {
   if (req.body.username === user.username && req.body.password === user.password) {
     const token = jwt.sign(
       {
-        username: user.username,
+        username: user.username
       },
       config.jwtSecret
     )
     return res.json({
       token,
-      username: user.username,
+      username: user.username
     })
   }
 
@@ -46,7 +46,7 @@ function getRandomNumber(req, res) {
   // req.user is assigned by jwt middleware if valid token is provided
   return res.json({
     user: req.user,
-    num: Math.random() * 100,
+    num: Math.random() * 100
   })
 }
 

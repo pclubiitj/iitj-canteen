@@ -1,5 +1,5 @@
 const express = require('express')
-const validate = require('express-validation')
+const { validate } = require('express-validation')
 const paramValidation = require('../../config/param-validation')
 const userCtrl = require('./user.controller')
 
@@ -11,7 +11,7 @@ router
   .get(userCtrl.list)
 
   /** POST /api/users - Create new user */
-  .post(validate(paramValidation.createUser), userCtrl.create)
+  .post(validate(paramValidation.createUser, {}, {}), userCtrl.create)
 
 router
   .route('/:userId')
@@ -19,7 +19,7 @@ router
   .get(userCtrl.get)
 
   /** PUT /api/users/:userId - Update user */
-  .put(validate(paramValidation.updateUser), userCtrl.update)
+  .put(validate(paramValidation.updateUser, {}, {}), userCtrl.update)
 
   /** DELETE /api/users/:userId - Delete user */
   .delete(userCtrl.remove)
