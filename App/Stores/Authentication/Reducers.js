@@ -1,26 +1,36 @@
-import { INITIAL_STATE } from './InitialState'
-import { createReducer } from 'reduxsauce'
-import { AuthActionTypes } from './Actions'
+import { INITIAL_STATE } from './InitialState';
+import { createReducer } from 'reduxsauce';
+import { AuthActionTypes } from './Actions';
 
-export const fetchUserSuccess = (state, { token }) => ({
-  ...state,
-  token: token,
-  userErrorMessage: null
-})
+export const loadToken = (state, { token }) => ({
+	...state,
+	token,
+	errorMessage: null,
+	loadingUserInfo: false
+});
 
-export const fetchUserFailure = (state, { errorMessage }) => ({
-  ...state,
-  token: null,
-  userErrorMessage: errorMessage
-})
+export const error = (state, { message }) => ({
+	...state,
+	token: null,
+	errorMessage: message,
+	loadingUserInfo: false
+});
 
-export const signoutUser = (state) => ({
-  ...state,
-  token: null
-})
+export const deleteToken = (state) => ({
+	...state,
+	token: null,
+	errorMessage: null,
+	loadingUserInfo: false
+});
+
+export const loadingUserInfo = (state) => ({
+	...state,
+	loadingUserInfo: !state.loadingUserInfo
+});
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [AuthActionTypes.FETCH_USER_SUCCESS]: fetchUserSuccess,
-  [AuthActionTypes.FETCH_USER_FAILURE]: fetchUserFailure,
-  [AuthActionTypes.SIGNOUT_USER]: signoutUser
-})
+	[AuthActionTypes.DELETE_TOKEN]: deleteToken,
+	[AuthActionTypes.ERROR]: error,
+	[AuthActionTypes.LOAD_TOKEN]: loadToken,
+	[AuthActionTypes.LOADING_USER_INFO]: loadingUserInfo
+});

@@ -1,43 +1,57 @@
-import { put, call } from 'redux-saga/effects'
-import AuthActionTypes from 'App/Stores/Authentication/Actions'
-import NavigationService from 'App/Services/NavigationService'
-import { AsyncStorage } from 'react-native'
+import { put, call } from 'redux-saga/effects';
+import { AsyncStorage } from 'react-native';
+import AuthActionTypes from '../Stores/Authentication/Actions';
+import NavigationService from '../Services/NavigationService';
+import { silentSignIn, signIn, signOut } from '../Services/AuthenticationServices';
 
-export function* fetchUser() {
-  try {
-    const token = yield call(AsyncStorage.getItem, 'token')
-    if (token) {
-      yield put(AuthActionTypes.fetchUserSuccess(token))
-      NavigationService.navigate('HomeScreen')
-    } else {
-      NavigationService.navigate('SigninScreen')
-    }
-  } catch (err) {
-    console.log('Error while accessing AsyncStorage', err)
-  }
+function* injectToken(token) {
+	if (token) {
+		yield call(AsyncStorage.setItem, 'token', token);
+		yield put(AuthActionTypes.loadToken(token));
+		NavigationService.navigateAndReset('HomeScreen');
+	} else {
+		yield call(revokeToken);
+	}
 }
 
-export function* signinUser({ data }) {
-  try {
-    const { username, password } = data
-    const api = null // ToDo
-    const response = yield call(api, username, password)
-    yield call(AsyncStorage.setItem, 'token', response.token)
-    yield put(AuthActionTypes.fetchUserSuccess(response.token))
-    NavigationService.navigate('HomeScreen')
-  } catch (err) {
-    // I m temporarly forcing app to move ahead to HomeScreen
-    yield put(AuthActionTypes.fetchUserSuccess('FakeToken'))
-    // yield put(AuthActionTypes.fetchUserFailure("Some Error Occured While Connecting to API"))
-    NavigationService.navigate('HomeScreen')
-  }
+function* revokeToken() {
+	yield call(AsyncStorage.removeItem, 'token');
+	yield put(AuthActionTypes.deleteToken());
+	NavigationService.navigateAndReset('SigninScreen');
+}
+
+export function* fetchUser() {
+	try {
+		yield put(AuthActionTypes.loadingUserInfo());
+		const token = yield call(AsyncStorage.getItem, 'token');
+		if (token) {
+			yield call(injectToken, token);
+		} else {
+			const { idToken = null } = yield silentSignIn();
+			yield call(injectToken, idToken);
+		}
+	} catch ({ message = 'Snap :(' }) {
+		yield call(revokeToken);
+		yield put(AuthActionTypes.error(message));
+	}
+}
+
+export function* signInUser() {
+	try {
+		yield put(AuthActionTypes.loadingUserInfo());
+		const { idToken = null } = yield signIn();
+		yield call(injectToken, idToken);
+	} catch ({ message = 'Snap :(' }) {
+		yield put(AuthActionTypes.error(message));
+	}
 }
 
 export function* signoutUser() {
-  try {
-    yield call(AsyncStorage.removeItem, 'token')
-    NavigationService.navigate('SigninScreen')
-  } catch (err) {
-    console.log('Failed to remove token from storage!')
-  }
+	try {
+		yield put(AuthActionTypes.loadingUserInfo());
+		yield call(signOut);
+		yield call(revokeToken);
+	} catch ({ message = 'Snap :(' }) {
+		yield put(AuthActionTypes.error(message));
+	}
 }
