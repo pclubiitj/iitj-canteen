@@ -1,13 +1,13 @@
-const jwt = require('jsonwebtoken')
-const httpStatus = require('http-status')
-const APIError = require('../helpers/APIError')
-const config = require('../../config/config')
+const jwt = require('jsonwebtoken');
+const httpStatus = require('http-status');
+const APIError = require('../helpers/APIError');
+const config = require('../../config/config');
 
 // sample user, used for authentication
 const user = {
   username: 'react',
   password: 'express'
-}
+};
 
 /**
  * Returns jwt token if valid username and password is provided
@@ -20,20 +20,17 @@ function login(req, res, next) {
   // Ideally you'll fetch this from the db
   // Idea here was to show how jwt works with simplicity
   if (req.body.username === user.username && req.body.password === user.password) {
-    const token = jwt.sign(
-      {
-        username: user.username
-      },
-      config.jwtSecret
-    )
+    const token = jwt.sign({
+      username: user.username
+    }, config.jwtSecret);
     return res.json({
       token,
       username: user.username
-    })
+    });
   }
 
-  const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED, true)
-  return next(err)
+  const err = new APIError('Authentication error', httpStatus.UNAUTHORIZED, true);
+  return next(err);
 }
 
 /**
@@ -47,7 +44,7 @@ function getRandomNumber(req, res) {
   return res.json({
     user: req.user,
     num: Math.random() * 100
-  })
+  });
 }
 
-module.exports = { login, getRandomNumber }
+module.exports = { login, getRandomNumber };

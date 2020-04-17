@@ -1,4 +1,4 @@
-const User = require('./user.model')
+const User = require('./user.model');
 
 /**
  * Load user and append to req.
@@ -6,10 +6,10 @@ const User = require('./user.model')
 function load(req, res, next, id) {
   User.get(id)
     .then((user) => {
-      req.user = user // eslint-disable-line no-param-reassign
-      return next()
+      req.user = user; // eslint-disable-line no-param-reassign
+      return next();
     })
-    .catch((e) => next(e))
+    .catch(e => next(e));
 }
 
 /**
@@ -17,7 +17,7 @@ function load(req, res, next, id) {
  * @returns {User}
  */
 function get(req, res) {
-  return res.json(req.user)
+  return res.json(req.user);
 }
 
 /**
@@ -30,12 +30,11 @@ function create(req, res, next) {
   const user = new User({
     username: req.body.username,
     mobileNumber: req.body.mobileNumber
-  })
+  });
 
-  user
-    .save()
-    .then((savedUser) => res.json(savedUser))
-    .catch((e) => next(e))
+  user.save()
+    .then(savedUser => res.json(savedUser))
+    .catch(e => next(e));
 }
 
 /**
@@ -45,14 +44,13 @@ function create(req, res, next) {
  * @returns {User}
  */
 function update(req, res, next) {
-  const user = req.user
-  user.username = req.body.username
-  user.mobileNumber = req.body.mobileNumber
+  const user = req.user;
+  user.username = req.body.username;
+  user.mobileNumber = req.body.mobileNumber;
 
-  user
-    .save()
-    .then((savedUser) => res.json(savedUser))
-    .catch((e) => next(e))
+  user.save()
+    .then(savedUser => res.json(savedUser))
+    .catch(e => next(e));
 }
 
 /**
@@ -62,10 +60,10 @@ function update(req, res, next) {
  * @returns {User[]}
  */
 function list(req, res, next) {
-  const { limit = 50, skip = 0 } = req.query
+  const { limit = 50, skip = 0 } = req.query;
   User.list({ limit, skip })
-    .then((users) => res.json(users))
-    .catch((e) => next(e))
+    .then(users => res.json(users))
+    .catch(e => next(e));
 }
 
 /**
@@ -73,11 +71,10 @@ function list(req, res, next) {
  * @returns {User}
  */
 function remove(req, res, next) {
-  const user = req.user
-  user
-    .remove()
-    .then((deletedUser) => res.json(deletedUser))
-    .catch((e) => next(e))
+  const user = req.user;
+  user.remove()
+    .then(deletedUser => res.json(deletedUser))
+    .catch(e => next(e));
 }
 
-module.exports = { load, get, create, update, list, remove }
+module.exports = { load, get, create, update, list, remove };

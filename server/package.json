@@ -1,8 +1,8 @@
 {
-  "name": "iitj-canteen",
-  "version": "1.0.0",
-  "description": "Canteen Server backend",
-  "author": "",
+  "name": "express-mongoose-es6-rest-api",
+  "version": "5.0.0",
+  "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
+  "author": "Kunal Kapadia <kunalkapadia12@gmail.com>",
   "main": "index.js",
   "private": false,
   "engines": {
@@ -13,8 +13,6 @@
   "scripts": {
     "start": "node index.js",
     "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
-    "dev": "nodemon index.js",
-    "dev:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn dev",
     "lint": "esw *.js server config --color",
     "lint:watch": "yarn lint -- --watch",
     "precommit": "yarn lint && yarn test",
@@ -26,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/KunalKapadia/express-mongoose-es6-rest-api.git"
+    "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
   },
   "keywords": [
     "express",
@@ -51,9 +49,8 @@
     "dotenv": "^8.2.0",
     "express": "4.17.1",
     "express-jwt": "5.3.3",
-    "express-validation": "3.0.2",
+    "express-validation": "1.0.3",
     "express-winston": "4.0.3",
-    "google-auth-library": "^6.0.0",
     "helmet": "3.22.0",
     "http-status": "1.4.2",
     "joi": "14.3.1",
@@ -61,8 +58,7 @@
     "method-override": "^3.0.0",
     "mongoose": "5.9.9",
     "morgan": "1.10.0",
-    "winston": "3.2.1",
-    "yarn": "^1.22.4"
+    "winston": "3.2.1"
   },
   "devDependencies": {
     "chai": "4.2.0",
@@ -86,9 +82,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "bugs": {
-    "url": "https://github.com/pclubiitj/iitj-canteen/issues"
-  },
-  "homepage": ""
+  }
 }
