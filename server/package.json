@@ -12,21 +12,25 @@
   },
   "scripts": {
     "start": "node index.js",
-    "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
+    "start-debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
     "dev": "nodemon index.js",
-    "dev:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn dev",
+    "dev-debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn dev",
+    "prettier-fix": "prettier --write '**/*.js'",
+    "prettier-check": "prettier --list-different '**/*.js'",
+    "lint-fix": "eslint --fix .",
+    "lint-check": "eslint .",
     "lint": "esw *.js server config --color",
-    "lint:watch": "yarn lint -- --watch",
+    "lint-watch": "yarn lint -- --watch",
     "precommit": "yarn lint && yarn test",
     "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors server --recursive",
-    "test:watch": "yarn test -- --watch",
-    "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
-    "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
+    "test-watch": "yarn test -- --watch",
+    "test-coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
+    "test-check-coverage": "yarn test:coverage && istanbul check-coverage",
     "report-coverage": "coveralls < ./coverage/lcov.info"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/KunalKapadia/express-mongoose-es6-rest-api.git"
+    "url": "git@github.com:KunalKapadia/express-mongoose-es6-rest-api.git"
   },
   "keywords": [
     "express",
@@ -53,16 +57,13 @@
     "express-jwt": "5.3.3",
     "express-validation": "3.0.2",
     "express-winston": "4.0.3",
-    "google-auth-library": "^6.0.0",
     "helmet": "3.22.0",
     "http-status": "1.4.2",
-    "joi": "14.3.1",
     "jsonwebtoken": "8.5.1",
     "method-override": "^3.0.0",
     "mongoose": "5.9.9",
     "morgan": "1.10.0",
-    "winston": "3.2.1",
-    "yarn": "^1.22.4"
+    "winston": "3.2.1"
   },
   "devDependencies": {
     "chai": "4.2.0",
@@ -77,6 +78,7 @@
     "husky": "4.2.5",
     "istanbul": "1.1.0-alpha.1",
     "mocha": "7.1.1",
+    "prettier": "false2.0.4",
     "supertest": "4.0.2",
     "supertest-as-promised": "4.0.2",
     "validate-commit-msg": "^2.14.0"
@@ -86,9 +88,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "bugs": {
-    "url": "https://github.com/pclubiitj/iitj-canteen/issues"
-  },
-  "homepage": ""
+  }
 }
