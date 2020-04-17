@@ -1,47 +1,35 @@
 {
-  "rules": {
-    "indent": [
-      2,
-      2,
-      {
-        "SwitchCase": 1
-      }
-    ],
-    "space-before-function-paren": [
-      2,
-      {
-        "anonymous": "always",
-        "named": "never"
-      }
-    ],
-    "no-use-before-define": [
-      2,
-      "nofunc"
-    ],
-    // TODO: turn on later
-    "comma-dangle": [
-      0
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
-    "no-underscore-dangle": [
-      0
-    ]
-  },
-  "env": {
-    "node": true,
-    "mocha": true
-  },
+  "plugins": [
+    "react",
+    "react-native",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module"
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "sourceType": "module",
+    "useJSXTextNode": false
+  },
+  "env": {
+    "react-native/react-native": true
   },
   "extends": [
-    "eslint:recommended",
-    "airbnb-base"
-  ]
+    "standard",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react-native/no-raw-text": 0, // Avoid false positive, wait for fix
+    "react-native/no-inline-styles" : 0 // Allow inline style 
+  }
 }

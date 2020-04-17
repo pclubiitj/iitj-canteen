@@ -66,6 +66,7 @@
     "winston": "3.2.1"
   },
   "devDependencies": {
+    "babel-eslint": "false10.1.0",
     "chai": "4.2.0",
     "commitizen": "^4.0.4",
     "coveralls": "^3.0.11",
