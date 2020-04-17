@@ -1,17 +1,18 @@
-import { createActions } from 'reduxsauce'
+import { createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions({
-  // Fetch user informations from asyncStorage
-  fetchUser: null,
-  // Sign user in and send data to API to get back token
-  signinUser: null,
-  // User informations were successfully fetched
-  fetchUserSuccess: ['token'],
-  // Sign User Out and Remove The Token
-  signoutUser: null,
-  // An error occurred
-  fetchUserFailure: ['errorMessage']
-})
+	/* redux-saga actions */
+	signInUser: null, // Action to initiate a sign in
+	signOutUser: null, // Action to initiate a sign out
+	fetchUser: null, // Loading user information at app start up
 
-export const AuthActionTypes = Types
-export default Creators
+	/* redux state actions */
+	loadToken: ['token'], // put token into store
+	deleteToken: null, // remove token from store
+	loadingUserInfo: null, // start loading
+
+	error: ['message'] // error occurred
+});
+
+export const AuthActionTypes = Types;
+export default Creators;

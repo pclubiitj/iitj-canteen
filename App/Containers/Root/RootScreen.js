@@ -1,32 +1,26 @@
-import React, { Component } from 'react'
-import NavigationService from 'App/Services/NavigationService'
-import AppNavigator from 'App/Navigators/AppNavigator'
-import { View } from 'react-native'
-import { connect } from 'react-redux'
-import { Helpers } from 'App/Theme'
-import { GoogleSignin } from '@react-native-community/google-signin'
-import AuthenticationServices from 'App/Services/AuthenticationServices'
+import React, { Component } from 'react';
+import NavigationService from '../../Services/NavigationService';
+import AppNavigator from '../../Navigators/AppNavigator';
+import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { Helpers } from '../../Theme';
 
 class RootScreen extends Component {
-  componentDidMount() {
-    GoogleSignin.configure(AuthenticationServices.googleConfig)
-  }
-
-  render() {
-    return (
-      <View style={Helpers.fill}>
-        <AppNavigator
-          ref={(navigatorRef) => {
-            NavigationService.setTopLevelNavigator(navigatorRef)
-          }}
-        />
-      </View>
-    )
-  }
+	render() {
+		return (
+			<View style={Helpers.fill}>
+				<AppNavigator
+					ref={(navigatorRef) => {
+						NavigationService.setTopLevelNavigator(navigatorRef);
+					}}
+				/>
+			</View>
+		);
+	}
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = (dispatch) => ({})
+const mapDispatchToProps = (dispatch) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(RootScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(RootScreen);
