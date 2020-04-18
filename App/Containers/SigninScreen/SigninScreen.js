@@ -19,6 +19,7 @@ class SigninScreen extends React.Component {
 					onPress={signIn}
 					disabled={loading}
 				/>
+				{this.props.error ? <Text>{this.props.error}</Text> : null}
 			</View>
 		);
 	}
@@ -26,10 +27,12 @@ class SigninScreen extends React.Component {
 
 SigninScreen.propTypes = {
 	signIn: PropTypes.func,
-	loading: PropTypes.bool
+	loading: PropTypes.bool,
+	error: PropTypes.string
 };
 
 const mapStateToProps = (state) => ({
+	error: state.authentication.errorMessage,
 	loading: state.authentication.loadingUserInfo
 });
 

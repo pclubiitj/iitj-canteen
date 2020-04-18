@@ -1,4 +1,4 @@
-export const API_URL = 'https://jsonplaceholder.typicode.com/users/';
+export const API_URL = 'http://10.0.2.2:4040/api';
 
 export const GOOGLE_SIGN_IN_CONFIG = {
 	scopes: ['https://www.googleapis.com/auth/userinfo.profile'], // what API you want to access on behalf of the user, default is email and profile

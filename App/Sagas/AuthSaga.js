@@ -2,10 +2,13 @@ import { put, call } from 'redux-saga/effects';
 import { AsyncStorage } from 'react-native';
 import AuthActionTypes from '../Stores/Authentication/Actions';
 import NavigationService from '../Services/NavigationService';
+import { setAxiosHeader, healthCheck } from '../Services/AxiosService';
 import { silentSignIn, signIn, signOut } from '../Services/AuthenticationServices';
 
 function* injectToken(token) {
 	if (token) {
+		yield call(setAxiosHeader, token);
+		yield call(healthCheck);
 		yield call(AsyncStorage.setItem, 'token', token);
 		yield put(AuthActionTypes.loadToken(token));
 		NavigationService.navigateAndReset('HomeScreen');
@@ -15,6 +18,7 @@ function* injectToken(token) {
 }
 
 function* revokeToken() {
+	yield call(setAxiosHeader, null);
 	yield call(AsyncStorage.removeItem, 'token');
 	yield put(AuthActionTypes.deleteToken());
 	NavigationService.navigateAndReset('SigninScreen');
