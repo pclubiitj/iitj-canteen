@@ -19,7 +19,6 @@ export const error = (state, { message }) => ({
 export const deleteToken = (state) => ({
 	...state,
 	token: null,
-	errorMessage: null,
 	loadingUserInfo: false
 });
 

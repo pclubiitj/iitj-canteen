@@ -3,6 +3,6 @@
  */
 export const INITIAL_STATE = {
 	token: null,
-	userErrorMessage: null,
+	errorMessage: null,
 	loadingUserInfo: false
 };

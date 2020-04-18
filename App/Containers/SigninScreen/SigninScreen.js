@@ -8,7 +8,7 @@ import { GoogleSigninButton } from '@react-native-community/google-signin';
 
 class SigninScreen extends React.Component {
 	render() {
-		const { signIn, loading } = this.props;
+		const { signIn, loading, error } = this.props;
 		return (
 			<View style={styles.container}>
 				<Text style={styles.text}>SignIn Through Your Google Account!</Text>
@@ -19,6 +19,7 @@ class SigninScreen extends React.Component {
 					onPress={signIn}
 					disabled={loading}
 				/>
+				<Text>{error}</Text>
 			</View>
 		);
 	}
@@ -26,10 +27,12 @@ class SigninScreen extends React.Component {
 
 SigninScreen.propTypes = {
 	signIn: PropTypes.func,
-	loading: PropTypes.bool
+	loading: PropTypes.bool,
+	error: PropTypes.string
 };
 
 const mapStateToProps = (state) => ({
+	error: state.authentication.errorMessage,
 	loading: state.authentication.loadingUserInfo
 });
 
