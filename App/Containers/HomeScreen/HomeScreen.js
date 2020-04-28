@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import AuthActionTypes from '../../Stores/Authentication/Actions';
 import styles from './HomeScreenStyle.js';
@@ -11,7 +11,6 @@ class HomeScreen extends React.Component {
 		return (
 			<View style={styles.view}>
 				<Text style={styles.text}>HomeScreen</Text>
-				<Button title="Sign Out" onPress={signOut} disabled={loading} />
 			</View>
 		);
 	}
@@ -19,7 +18,6 @@ class HomeScreen extends React.Component {
 
 HomeScreen.propTypes = {
 	token: PropTypes.string,
-	signOut: PropTypes.func,
 	loading: PropTypes.bool
 };
 
@@ -28,8 +26,6 @@ const mapStateToProps = (state) => ({
 	loading: state.authentication.loadingUserInfo
 });
 
-const mapDispatchToProps = (dispatch) => ({
-	signOut: () => dispatch(AuthActionTypes.signOutUser())
-});
+const mapDispatchToProps = (dispatch) => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
