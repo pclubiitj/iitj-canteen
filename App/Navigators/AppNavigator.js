@@ -1,5 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 
+import { AsyncStorage } from 'react-native';
+
 import { createStackNavigator } from 'react-navigation-stack';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import { createDrawerNavigator } from 'react-navigation-drawer';
@@ -10,12 +12,25 @@ import SigninScreen from '../Containers/SigninScreen/SigninScreen';
 import PastOrdersScreen from '../Containers/PastOrdersScreen/PastOrderScreen';
 import ProfileScreen from '../Containers/ProfileScreen/ProfileScreen';
 import QueueScreen from '../Containers/QueueScreen/QueueScreen';
+import DetailScreen from '../Containers/DetailScreen/DetailScreen';
+import IntroScreen from '../Containers/IntroScreen/IntroScreen';
 
 import React from 'react';
 import { View } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+
+const HomeStack = createStackNavigator(
+	{
+		HomeScreen: HomeScreen,
+		DetailScreen: DetailScreen
+	},
+	{
+		initialRouteName: 'HomeScreen',
+		headerMode: "none"
+	}
+);
 
 const BottomStack = createMaterialBottomTabNavigator(
 	{
@@ -30,8 +45,8 @@ const BottomStack = createMaterialBottomTabNavigator(
 				)
 			}
 		},
-		HomeScreen: {
-			screen: HomeScreen,
+		HomeStack: {
+			screen: HomeStack,
 			navigationOptions: {
 				tabBarLabel: 'Home',
 				tabBarIcon: ({ tintColor }) => (
@@ -54,9 +69,9 @@ const BottomStack = createMaterialBottomTabNavigator(
 		}
 	},
 	{
-		initialRouteName: 'HomeScreen',
+		initialRouteName: 'HomeStack',
 		barStyle: {
-			backgroundColor: '#c2c2d6',
+			backgroundColor: '#f2f2f2',
 			borderTopLeftRadius: 20,
 			borderTopRightRadius: 20,
 			overflow: 'hidden'
@@ -66,22 +81,23 @@ const BottomStack = createMaterialBottomTabNavigator(
 
 const Drawer = createDrawerNavigator(
 	{
-		HomeStack: BottomStack,
+		MainStack: BottomStack,
 		ProfileScreen: ProfileScreen
 	},
 	{
-		initialRouteName: 'HomeStack'
+		initialRouteName: 'MainStack'
 	}
 );
 
 const StackNavigator = createStackNavigator(
 	{
+		IntroScreen: IntroScreen,
 		SplashScreen: SplashScreen,
 		LoginFlow: SigninScreen,
 		MainFlow: Drawer
 	},
 	{
-		initialRouteName: 'SplashScreen',
+		initialRouteName: AsyncStorage.getItem('FirstTimeUser') ? 'SplashScreen' : 'IntroScreen',
 		headerMode: 'none'
 	}
 );
