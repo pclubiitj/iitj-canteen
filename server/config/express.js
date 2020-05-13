@@ -16,6 +16,8 @@ const APIError = require('../server/helpers/APIError');
 
 const app = express();
 
+//ToDo: express-session, connect-mongo
+
 if (config.env === 'development') {
 	app.use(logger('dev'));
 }
@@ -31,8 +33,13 @@ app.use(methodOverride());
 // secure apps by setting various HTTP headers
 app.use(helmet());
 
-// enable CORS - Cross Origin Resource Sharing
-app.use(cors());
+// enable CORS - Cross Origin Resource Sharing for development port 3000
+app.use(
+	cors({
+		origin: 'http://localhost:3000',
+		credentials: true
+	})
+);
 
 // enable detailed API logging in dev env
 if (config.env === 'development') {
@@ -42,8 +49,10 @@ if (config.env === 'development') {
 		expressWinston.logger({
 			winstonInstance,
 			meta: true, // optional: log meta data about request (defaults to true)
-			msg: 'HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms',
-			colorStatus: true // Color the status code (default green, 3XX cyan, 4XX yellow, 5XX red).
+			msg:
+				'HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms',
+			colorStatus: true, // Color the status code (default green, 3XX cyan, 4XX yellow, 5XX red).
+			headerBlacklist: ['Authorization'] //	Omit the heavy token header from logger
 		})
 	);
 }
@@ -55,7 +64,9 @@ app.use('/api', routes);
 app.use((err, req, res, next) => {
 	if (err instanceof expressValidation.ValidationError) {
 		// validation error contains errors which is an array of error each containing message[]
-		const unifiedErrorMessage = err.details.body.map((error) => error.message).join('. and');
+		const unifiedErrorMessage = err.details.body
+			.map((error) => error.message)
+			.join('. and');
 		const error = new APIError(unifiedErrorMessage, err.statusCode, true);
 		return next(error);
 	} else if (!(err instanceof APIError)) {

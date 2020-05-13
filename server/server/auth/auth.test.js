@@ -1,89 +1,71 @@
-/* eslint-disable no-undef */
 const request = require('supertest-as-promised');
 const httpStatus = require('http-status');
-const jwt = require('jsonwebtoken');
-const chai = require('chai'); // eslint-disable-line import/newline-after-import
+const chai = require('chai');
 const expect = chai.expect;
 const app = require('../../index');
-const config = require('../../config/config');
 
 chai.config.includeStack = true;
 
 describe('## Auth APIs', () => {
-	const validUserCredentials = {
-		username: 'react',
-		password: 'express'
-	};
-
-	const invalidUserCredentials = {
-		username: 'react',
-		password: 'IDontKnow'
-	};
-
-	let jwtToken;
-
-	describe('# POST /api/auth/login', () => {
-		it('should return Authentication error', (done) => {
+	describe('# GET /api/auth/user', () => {
+		it('should give error message regarding missing header', (done) => {
 			request(app)
-				.post('/api/auth/login')
-				.send(invalidUserCredentials)
+				.get('/api/auth/user')
 				.expect(httpStatus.UNAUTHORIZED)
 				.then((res) => {
-					expect(res.body.message).to.equal('Authentication error');
+					expect(res.body.message).to.equal('Authorization Header Missing');
 					done();
 				})
 				.catch(done);
 		});
 
-		it('should get valid JWT token', (done) => {
+		it('should give wrong format', (done) => {
 			request(app)
-				.post('/api/auth/login')
-				.send(validUserCredentials)
-				.expect(httpStatus.OK)
-				.then((res) => {
-					expect(res.body).to.have.property('token');
-					jwt.verify(res.body.token, config.jwtSecret, (err, decoded) => {
-						expect(err).to.not.be.ok; // eslint-disable-line no-unused-expressions
-						expect(decoded.username).to.equal(validUserCredentials.username);
-						jwtToken = `Bearer ${res.body.token}`;
-						done();
-					});
-				})
-				.catch(done);
-		});
-	});
-
-	describe('# GET /api/auth/random-number', () => {
-		it('should fail to get random number because of missing Authorization', (done) => {
-			request(app)
-				.get('/api/auth/random-number')
+				.get('/api/auth/user')
+				.set('Authorization', 'token')
 				.expect(httpStatus.UNAUTHORIZED)
 				.then((res) => {
-					expect(res.body.message).to.equal('Unauthorized');
+					expect(res.body.message).to.equal('Authentication error: Bad Format');
 					done();
 				})
 				.catch(done);
 		});
 
-		it('should fail to get random number because of wrong token', (done) => {
+		it('should give wrong scheme', (done) => {
 			request(app)
-				.get('/api/auth/random-number')
-				.set('Authorization', 'Bearer inValidToken')
+				.get('/api/auth/user')
+				.set('Authorization', 'Bear token')
 				.expect(httpStatus.UNAUTHORIZED)
 				.then((res) => {
-					expect(res.body.message).to.equal('Unauthorized');
+					expect(res.body.message).to.equal('Authentication error: Bad Scheme');
 					done();
 				})
 				.catch(done);
 		});
 
-		it('should get a random number', (done) => {
+		it('should give wrong number of segments in token', (done) => {
 			request(app)
-				.get('/api/auth/random-number')
-				.set('Authorization', jwtToken)
-				.expect(httpStatus.OK)
+				.get('/api/auth/user')
+				.set('Authorization', 'Bearer 1')
+				.expect(httpStatus.UNAUTHORIZED)
 				.then((res) => {
-					expect(res.body.num).to.be.a('number');
+					expect(res.body.message).to.equal(
+						'Wrong number of segments in token: 1'
+					);
+					done();
+				})
+				.catch(done);
+		});
+
+		it('should give invalid token', (done) => {
+			request(app)
+				.get('/api/auth/user')
+				.set('Authorization', 'Bearer 1.2.2')
+				.expect(httpStatus.UNAUTHORIZED)
+				.then((res) => {
+					expect(res.body.message).to.equal(
+						"Can't parse token envelope: 1': Unexpected end of JSON input"
+					);
 					done();
 				})
 				.catch(done);

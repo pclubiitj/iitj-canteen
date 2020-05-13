@@ -1,18 +1,18 @@
 version: '2'
 
 services:
-  express-mongoose-es6-rest-api:
+  server:
     build:
       context: .
     volumes:
-      # Mounts the project directory on the host to /app inside the container,
+      # Mounts the project directory on the host to /server inside the container,
       # allowing you to modify the code without having to rebuild the image.
-      - .:/app
+      - .:/server
       # Just specify a path and let the Engine create a volume.
       # Data present in the base image at the specified mount point will be copied
       # over to the new volume upon volume initialization.
       # node_modules from this new volume will be used and not from your local dev env.
-      - /app/node_modules/
+      - /server/node_modules/
 
     # Expose ports [HOST:CONTAINER}
     ports:
@@ -24,8 +24,8 @@ services:
 
     # Overwrite any env var defined in .env file (if required)
     environment:
-      - MONGO_HOST=mongodb://mongo/express-mongoose-es6-rest-api-development
-      - DEBUG=express-mongoose-es6-rest-api:*
+      - MONGO_HOST=mongodb://mongo/server-development
+      - DEBUG=server:*
 
     # Link to containers in another service.
     # Links also express dependency between services in the same way as depends_on,
