@@ -7,10 +7,10 @@
 
 export default {
 	transparent: 'rgba(0,0,0,0)',
-	// Example colors:
 	white: '#ffffff',
-	text: '#212529',
+	text: '#8c8c8c',
 	primary: '#007bff',
 	success: '#28a745',
-	error: '#dc3545'
+	error: '#dc3545',
+
 };

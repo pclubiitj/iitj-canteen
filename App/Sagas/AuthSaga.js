@@ -11,7 +11,7 @@ function* injectToken(token) {
 		yield call(healthCheck);
 		yield call(AsyncStorage.setItem, 'token', token);
 		yield put(AuthActionTypes.loadToken(token));
-		NavigationService.navigateAndReset('HomeScreen');
+		NavigationService.navigateAndReset('MainFlow');
 	} catch ({ message = 'Snap :(' }) {
 		yield put(AuthActionTypes.error(message));
 		yield call(revokeToken);
@@ -22,7 +22,7 @@ function* revokeToken() {
 	yield call(revokeAxiosHeader);
 	yield call(AsyncStorage.removeItem, 'token');
 	yield put(AuthActionTypes.deleteToken());
-	NavigationService.navigateAndReset('SigninScreen');
+	NavigationService.navigateAndReset('LoginFlow');
 }
 
 export function* fetchUser() {
@@ -33,7 +33,11 @@ export function* fetchUser() {
 			yield call(injectToken, token);
 		} else {
 			const { idToken = null } = yield silentSignIn();
-			yield call(injectToken, idToken);
+			if (idToken) {
+				yield call(injectToken, idToken);
+			} else {
+				yield call(revokeToken);
+			}
 		}
 	} catch ({ message = 'Snap :(' }) {
 		yield call(revokeToken);

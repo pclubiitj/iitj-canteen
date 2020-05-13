@@ -17,5 +17,5 @@ export function revokeAxiosHeader() {
 }
 
 export function* healthCheck() {
-	yield client.get('/health-check');
+	// yield client.get('/health-check');
 }
