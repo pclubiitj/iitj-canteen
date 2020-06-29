@@ -4,20 +4,29 @@ const httpStatus = require('http-status');
 const APIError = require('../helpers/APIError');
 
 /**
- * User Schema
+ * Auth Schema
  */
-const UserSchema = new mongoose.Schema({
-	username: {
+const AuthSchema = new mongoose.Schema({
+	token: {
+		type: String,
+		required: true,
+		select: false
+	},
+	name: {
 		type: String,
 		required: true
 	},
-	mobileNumber: {
+	email: {
 		type: String,
 		required: true,
 		match: [
-			/^[1-9][0-9]{9}$/,
-			'The value of path {PATH} ({VALUE}) is not a valid mobile number.'
+			/^((([a-z]{1,}\.[0-9]{1,})|([a-z]{1,}))@iitj\.ac\.in)$/,
+			'The value of {PATH} {VALUE} is not a valid iitj email id.'
 		]
+	},
+	picture: {
+		type: String,
+		required: true
 	},
 	createdAt: {
 		type: Date,
@@ -35,16 +44,16 @@ const UserSchema = new mongoose.Schema({
 /**
  * Methods
  */
-UserSchema.method({});
+AuthSchema.method({});
 
 /**
  * Statics
  */
-UserSchema.statics = {
+AuthSchema.statics = {
 	/**
 	 * Get user
 	 * @param {ObjectId} id - The objectId of user.
-	 * @returns {Promise<User, APIError>}
+	 * @returns {Promise<Auth, APIError>}
 	 */
 	get(id) {
 		return this.findById(id)
@@ -56,24 +65,10 @@ UserSchema.statics = {
 				const err = new APIError('No such user exists!', httpStatus.NOT_FOUND);
 				return Promise.reject(err);
 			});
-	},
-
-	/**
-	 * List users in descending order of 'createdAt' timestamp.
-	 * @param {number} skip - Number of users to be skipped.
-	 * @param {number} limit - Limit number of users to be returned.
-	 * @returns {Promise<User[]>}
-	 */
-	list({ skip = 0, limit = 50 } = {}) {
-		return this.find()
-			.sort({ createdAt: -1 })
-			.skip(+skip)
-			.limit(+limit)
-			.exec();
 	}
 };
 
 /**
- * @typedef User
+ * @typedef Auth
  */
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Auth', AuthSchema, 'users');

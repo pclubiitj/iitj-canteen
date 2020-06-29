@@ -14,9 +14,14 @@ const envVarsSchema = Joi.object({
 		then: Joi.boolean().default(true),
 		otherwise: Joi.boolean().default(false)
 	}),
-	JWT_SECRET: Joi.string().required().description('JWT Secret required to sign'),
+	JWT_SECRET: Joi.string()
+		.required()
+		.description('JWT Secret required to sign'),
 	MONGO_HOST: Joi.string().required().description('Mongo DB host url'),
-	MONGO_PORT: Joi.number().default(27017)
+	MONGO_PORT: Joi.number().default(27017),
+	CLIENT_ID: Joi.string()
+		.required()
+		.description('Google OAuth client id required')
 })
 	.unknown()
 	.required();
@@ -34,7 +39,8 @@ const config = {
 	mongo: {
 		host: envVars.MONGO_HOST,
 		port: envVars.MONGO_PORT
-	}
+	},
+	clientId: envVars.CLIENT_ID
 };
 
 module.exports = config;
