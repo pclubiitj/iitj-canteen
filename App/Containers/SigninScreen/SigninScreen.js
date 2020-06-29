@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ImageBackground } from 'react-native';
 import { connect } from 'react-redux';
 import AuthActionTypes from '../../Stores/Authentication/Actions';
 import styles from './SigninScreenStyle';
@@ -11,15 +11,25 @@ class SigninScreen extends React.Component {
 		const { signIn, loading, error } = this.props;
 		return (
 			<View style={styles.container}>
-				<Text style={styles.text}>SignIn Through Your Google Account!</Text>
-				<GoogleSigninButton
-					style={{ width: '80%', height: 60 }}
-					size={GoogleSigninButton.Size.Wide}
-					color={GoogleSigninButton.Color.Light}
-					onPress={signIn}
-					disabled={loading}
-				/>
-				<Text>{error}</Text>
+				<ImageBackground
+					source={require('../../Assets/Images/signinScreenImage.png')}
+					style={styles.backgroundImage}
+				>
+					<View style={styles.card}>
+						<Text style={styles.title}>FoodBytes</Text>
+						<Text style={styles.text}>
+							SignIn Through Your Google Account!SignIn Through Your Google Account!SignIn Through
+							Your Google Account!SignIn Through Your Google Account!
+						</Text>
+					</View>
+					<GoogleSigninButton
+						style={{ width: '80%', height: 60 }}
+						size={GoogleSigninButton.Size.Wide}
+						color={GoogleSigninButton.Color.Light}
+						onPress={signIn}
+						disabled={loading}
+					/>
+				</ImageBackground>
 			</View>
 		);
 	}
