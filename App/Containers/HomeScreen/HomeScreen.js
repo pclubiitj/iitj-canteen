@@ -2,15 +2,20 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './HomeScreenStyle.js';
+import AuthActionTypes from '../../Stores/Authentication/Actions';
 import { PropTypes } from 'prop-types';
 
 class HomeScreen extends React.Component {
 	render() {
-		const { loading } = this.props;
+		const { loading, signOut } = this.props;
 		return (
 			<View style={styles.view}>
 				<Text style={styles.text}>HomeScreen</Text>
-				<Button onPress={() => this.props.navigation.navigate('DetailScreen')} title="DetailScreen" />
+				<Button
+					onPress={() => this.props.navigation.navigate('DetailScreen')}
+					title="DetailScreen"
+				/>
+				<Button onPress={signOut} title="Sign Out" />
 			</View>
 		);
 	}
@@ -26,6 +31,8 @@ const mapStateToProps = (state) => ({
 	loading: state.authentication.loadingUserInfo
 });
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+	signOut: () => dispatch(AuthActionTypes.signOutUser())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
