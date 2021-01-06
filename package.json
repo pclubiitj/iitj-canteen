@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@react-native-community/google-signin": "3.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "nvm": "0.0.4",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
